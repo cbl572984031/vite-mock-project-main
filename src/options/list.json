@@ -1,0 +1,46 @@
+{
+    "option": {
+        "column": {
+            "id": {
+                "label": "id",
+                "type": "lock"
+            },
+            "name": {
+                "label": "姓名",
+                "type": "input"
+            },
+            "age": {
+                "label": "年龄",
+                "type": "number"
+            },
+            "sex": {
+                "label": "性别",
+                "type": "radio"
+            },
+            "phone": {
+                "label": "联系电话",
+                "type": "phone"
+            },
+            "email": {
+                "label": "电子邮件",
+                "type": "email"
+            },
+            "createDate": {
+                "label": "创建时间",
+                "type": "date"
+            },
+            "hobby": {
+                "label": "爱好",
+                "type": "checkbox"
+            },
+            "status": {
+                "label": "状态",
+                "type": "switch"
+            },
+            "test": {
+                "label": "测试",
+                "type": "switch"
+            }
+        }
+    }
+}
