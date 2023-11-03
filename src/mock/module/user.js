@@ -1,11 +1,5 @@
 import BaseMock from '../baseMock'
 
-Mock.Random.extend({
-  phone: function () {
-    var phonePrefixs = ['159', '182', '189']
-    return this.pick(phonePrefixs) + Mock.mock(/\d{8}/)
-  }
-})
 
 export default class Role extends BaseMock {
   constructor() {
@@ -20,7 +14,7 @@ export default class Role extends BaseMock {
       name: '@cname()',
       age: '@integer(10, 40)',
       sex: '@integer(0, 1)',
-      phone: Mock.Random.phone(),
+      phone: '@phone',
       email: '@email',
       "hobby": '@shuffle(["足球","篮球","乒乓球","排球","网球"], 1, 5)',
       createDate: '@date(yyyy-MM-dd)',

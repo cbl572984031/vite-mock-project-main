@@ -1,9 +1,9 @@
 import Mock from 'mockjs'
 Mock.Random.extend({
   phone: function () {
-    var phonePrefixs = ['132', '135', '189'] // 自己写前缀哈
-    return this.pick(phonePrefixs) + Mock.mock(/\d{8}/) //Number()
-  },
+    var phonePrefixs = ['159', '182', '189']
+    return this.pick(phonePrefixs) + Mock.mock(/\d{8}/)
+  }
 })
 export default class BaseMock {
   listApi = /\/*\/getList/

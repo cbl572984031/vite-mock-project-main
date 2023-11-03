@@ -69,12 +69,29 @@ pnpm lint
 ```
 
 
-### 组件思路
-
-
-
-### 添加模块思路
+### 组件开发思路
 
 ```sh
-    首先在mock中配置好需要的接口，
+MyTable：
+    通过后台接口返回的headers配置作为为所有数据的解析模版。headers为一个对象，每个键值对为一个字段的描述，键与返回数据的键匹配。
+
+    label：     数据的中文名称。
+    type：      数据的类型描述，有input,select,checkbox,number,phone,email等格式，用于前端校验数据格式。lock类型为不可修改。
+    options：   可选的类型，为用户提供可选择的数据。value为值，label为中文描述。
+    required：  是否必传。
+
+    MyTable组件内通过ElTable组件绑定数据集，遍历headers渲染出表头。添加或删除headers的字段，可以控制表格列的显示隐藏。表格内根据headers的type字段分成不同渲染格式。可对数组类型，布尔类型，或字段名称判断做不同渲染。操作列可以将触发的数据传递给父组件做不同操作逻辑处理。
+
+EditRow：
+    通过传入的type类型展示不同的交互组件，输入框，日期框，选项，下拉等。修改后传值给父组件触发表单字段校验。
+
+MySearch：
+    默认包含日期选择搜索框，将传入的slot放在后面。
+```
+
+
+### 添加模块
+
+```sh
+    首先在mock中配置好需要的返回的数据格式与对应的headers，前端页面导入MyTable，传入接口返回数据records与headers，通过headers控制返回数据字段的显示隐藏，在headers中的字段会显示，不在的不会显示。编辑页面通过 ElForm 与 EditRow 组合表单，/src/utils/validate.js中的getValidate获取数据校验的格式,ElForm提供数据校验，EditRow根据type提供交互组件，将数据传给后台实现数据编辑。
 ```
