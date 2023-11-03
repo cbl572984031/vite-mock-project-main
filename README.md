@@ -71,7 +71,6 @@ pnpm lint
 
 ### 组件开发思路
 
-```sh
 MyTable：
     通过后台接口返回的headers配置作为为所有数据的解析模版。headers为一个对象，每个键值对为一个字段的描述，键与返回数据的键匹配。
 
@@ -87,11 +86,8 @@ EditRow：
 
 MySearch：
     默认包含日期选择搜索框，将传入的slot放在后面。
-```
 
 
 ### 添加模块
 
-```sh
     首先在mock中配置好需要的返回的数据格式与对应的headers，前端页面导入MyTable，传入接口返回数据records与headers，通过headers控制返回数据字段的显示隐藏，在headers中的字段会显示，不在的不会显示。编辑页面通过 ElForm 与 EditRow 组合表单，/src/utils/validate.js中的getValidate获取数据校验的格式,ElForm提供数据校验，EditRow根据type提供交互组件，将数据传给后台实现数据编辑。
-```
